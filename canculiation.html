@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+</head>
+
+<body>
+
+<table id = "list">
+    <tr id="head"></tr>
+</table>
+
+
+</body>
+<script>
+
+    var c = [200, 500, 800];
+    var startSP = 100;
+    var endSP = 5000;
+    var end_step = 100;
+
+    var headerTxt = '<th>m3</th>'
+
+    for (var i = 0; i < c.length; i++ )
+
+        headerTxt += '<th>' + c[i] + '</th>'
+
+        document.getElementById('head').innerHTML = headerTxt;
+
+        var row;
+
+        for(i = startSP; i <= endSP ; i += end_step)
+        {
+            row = document.createElement('tr');
+
+            var rowElements = '<td>' + i + '<td>';
+
+            for(var j = 0; j <c.length; j++)
+            {
+                rowElements += '<td>' + Math.ceil(i / c[j]) + '</td>'
+            }
+
+            row.innerHTML =rowElements;
+
+            document.getElementById('list').appendChild(row);
+        }
+
+
+</script>
+
+
+</html>
