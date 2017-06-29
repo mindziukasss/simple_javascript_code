@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+
+</head>
+
+<body>
+
+<button id="button1" onclick="toggleLight()"></button>
+
+<img id="myImage" style="width: 100px">
+
+</body>
+<script>
+
+    var lightOn = true;
+    var lightImagePrefix = 'https://www.w3schools.com/js/pic_bulb';
+    var buttonPrefix = '';
+
+    function toggleLight()
+    {
+        var lightImageUrl = lightImagePrefix;
+        var button = buttonPrefix;
+
+        if(lightOn) {
+            lightImageUrl += 'off.gif';
+            button += 'ON';
+        }else {
+            lightImageUrl += 'on.gif';
+            button += 'OFF';    }
+
+        document.getElementById('myImage').src = lightImageUrl;
+        document.getElementById('button1').innerHTML = button;
+
+        lightOn = !lightOn;
+    }
+
+    toggleLight();
+
+
+</script>
+
+
+</html>
